@@ -26,7 +26,7 @@ const signatureFont = localFont({
 });
 
 const swashesFont = localFont({
-  src: "../../fonts/swashes.ttf",
+  src: "../../fonts/Swashes.ttf",
   display: "swap",
   variable: "--font-swashes",
 });
