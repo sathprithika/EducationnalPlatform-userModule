@@ -371,21 +371,95 @@ export default function HeroSection() {
           }
         }
 
-        /* Simpler Duotone GIF Effects using filters only */
-        .duotone-gif-purple {
-          filter: grayscale(100%) sepia(100%) hue-rotate(250deg) saturate(300%)
-            brightness(0.9) contrast(1.1);
+        /* Tablet Landscape View (iPad 1024x768) - All 6 cards in single row */
+        @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+          .categories-grid {
+            grid-template-columns: repeat(6, 1fr) !important;
+            gap: 1.5rem !important;
+          }
+
+          .category-card,
+          .view-all-card {
+            padding: 0.5rem 0.75rem !important;
+          }
+
+          .category-icon {
+            margin-bottom: 0.25rem !important;
+          }
+
+          .category-icon svg {
+            width: 20px !important;
+            height: 20px !important;
+          }
+
+          .category-title {
+            font-size: 0.65rem !important;
+            margin-bottom: 0.125rem !important;
+          }
+
+          .category-count {
+            font-size: 0.6rem !important;
+          }
+
+          .view-all-icon-container {
+            width: 1.25rem !important;
+            height: 1.25rem !important;
+            margin-bottom: 0.25rem !important;
+          }
+
+          .view-all-icon-container svg {
+            width: 12px !important;
+            height: 12px !important;
+          }
+
+          /* Floating GIF positioning for tablet landscape */
+          .floating-gif-left {
+            top: -5px !important;
+            left: -20px !important;
+          }
+
+          .floating-gif-left > div > div {
+            width: 180px !important;
+            height: 180px !important;
+          }
+
+          .floating-gif-left img {
+            width: 180px !important;
+            height: 180px !important;
+          }
+
+          .floating-gif-right {
+            bottom: 125px !important;
+            right: -5px !important;
+          }
+
+          .floating-gif-right > div > div {
+            width: 180px !important;
+            height: 180px !important;
+          }
+
+          .floating-gif-right img {
+            width: 180px !important;
+            height: 180px !important;
+          }
         }
 
-        .duotone-gif-blue {
+        .duotone-gif-left {
           filter: grayscale(100%) sepia(100%) hue-rotate(200deg) saturate(250%)
             brightness(0.95) contrast(1.1);
         }
+
+        /* Duotone GIF Effects - Immediate Load Colors */ /* (Top RIGHT) */
+        .duotone-gif-right {
+          filter: grayscale(100%) sepia(100%) hue-rotate(285deg) saturate(900%)
+            brightness(0.8) contrast(1.3) !important;
+          will-change: filter;
+        }
       `}</style>
 
-      {/* Floating GIF - Top Left */}
+      {/* Floating GIF - Top Left (Business Purple) */}
       <div
-        className="absolute top-12 left-8 hidden lg:block"
+        className="floating-gif-left absolute top-12 left-8 hidden lg:block"
         style={{ zIndex: 1 }}
       >
         <div className="float-animation">
@@ -401,21 +475,23 @@ export default function HeroSection() {
               alt="Pen Animation"
               width={240}
               height={240}
-              className="duotone-gif-blue"
+              className="duotone-gif-left"
               style={{
                 width: "240px",
                 height: "240px",
                 objectFit: "contain",
                 imageRendering: "auto",
+                filter:
+                  "grayscale(100%) sepia(100%) hue-rotate(270deg) saturate(800%) brightness(0.85) contrast(1.35)",
               }}
             />
           </div>
         </div>
       </div>
 
-      {/* Floating GIF - Bottom Right */}
+      {/* Floating GIF - Bottom Right (Languages Pink) */}
       <div
-        className="absolute bottom-32 right-8 hidden lg:block"
+        className="floating-gif-right absolute bottom-32 right-8 hidden lg:block"
         style={{ zIndex: 1 }}
       >
         <div className="float-animation-delayed">
@@ -431,12 +507,14 @@ export default function HeroSection() {
               alt="Book Animation"
               width={240}
               height={240}
-              className="duotone-gif-purple"
+              className="duotone-gif-right"
               style={{
                 width: "240px",
                 height: "240px",
                 objectFit: "contain",
                 imageRendering: "auto",
+                filter:
+                  "grayscale(100%) sepia(100%) hue-rotate(320deg) saturate(900%) brightness(1.05) contrast(1.3)",
               }}
             />
           </div>
@@ -579,7 +657,7 @@ export default function HeroSection() {
             className="max-w-5xl mx-auto animate-fadeInUp"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 justify-items-center">
+            <div className="categories-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 justify-items-center">
               {categories.slice(0, 5).map((category, index) => (
                 <Link
                   key={index}
