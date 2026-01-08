@@ -443,18 +443,6 @@ export default function HeroSection() {
             height: 180px !important;
           }
         }
-
-        .duotone-gif-left {
-          filter: grayscale(100%) sepia(100%) hue-rotate(200deg) saturate(250%)
-            brightness(0.95) contrast(1.1);
-        }
-
-        /* Duotone GIF Effects - Immediate Load Colors */ /* (Top RIGHT) */
-        .duotone-gif-right {
-          filter: grayscale(100%) sepia(100%) hue-rotate(285deg) saturate(900%)
-            brightness(0.8) contrast(1.3) !important;
-          will-change: filter;
-        }
       `}</style>
 
       {/* Floating GIF - Top Left (Business Purple) */}
@@ -475,14 +463,12 @@ export default function HeroSection() {
               alt="Pen Animation"
               width={240}
               height={240}
-              className="duotone-gif-left"
               style={{
                 width: "240px",
                 height: "240px",
                 objectFit: "contain",
                 imageRendering: "auto",
-                filter:
-                  "grayscale(100%) sepia(100%) hue-rotate(270deg) saturate(800%) brightness(0.85) contrast(1.35)",
+      
               }}
             />
           </div>
@@ -507,14 +493,12 @@ export default function HeroSection() {
               alt="Book Animation"
               width={240}
               height={240}
-              className="duotone-gif-right"
               style={{
                 width: "240px",
                 height: "240px",
                 objectFit: "contain",
                 imageRendering: "auto",
-                filter:
-                  "grayscale(100%) sepia(100%) hue-rotate(320deg) saturate(900%) brightness(1.05) contrast(1.3)",
+                
               }}
             />
           </div>
