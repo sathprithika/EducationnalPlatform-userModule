@@ -132,14 +132,8 @@ export default function HeroSection() {
         }
 
         @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         .animate-fadeInUp {
@@ -147,305 +141,98 @@ export default function HeroSection() {
         }
 
         @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
         }
 
-        .float-animation {
-          animation: float 10s ease-in-out infinite;
-        }
-
+        .float-animation { animation: float 10s ease-in-out infinite; }
         .float-animation-delayed {
           animation: float 6s ease-in-out infinite;
           animation-delay: 2s;
         }
 
-        @keyframes resizeBox {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.03);
-          }
-        }
-
-        @keyframes cornerPulse {
-          0%,
-          100% {
-            opacity: 1;
-            stroke-width: 0.4;
-          }
-          50% {
-            opacity: 0.6;
-            stroke-width: 0.6;
-          }
-        }
-
-        @keyframes textPulse {
-          0%,
-          100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.7;
-          }
-        }
-
-        .scale-animation {
-          animation: resizeBox 6s ease-in-out infinite;
-          transform-origin: center;
-          will-change: transform;
-        }
-
-        .corner-handle {
-          animation: cornerPulse 3s ease-in-out infinite;
-          transform-origin: center;
-        }
-
-        .corner-handle:nth-of-type(5) {
-          animation-delay: 0s;
-        }
-
-        .corner-handle:nth-of-type(6) {
-          animation-delay: 0.75s;
-        }
-
-        .corner-handle:nth-of-type(7) {
-          animation-delay: 1.5s;
-        }
-
-        .corner-handle:nth-of-type(8) {
-          animation-delay: 2.25s;
-        }
-
-        .highlight-text {
-          animation: textPulse 3s ease-in-out infinite;
-        }
-
-        /* Professional Category Card Hover Effects */
-        @keyframes glow-pulse {
-          0%,
-          100% {
-            box-shadow:
-              0 2px 4px 0 rgba(124, 58, 237, 0.06),
-              0 1px 2px 0 rgba(0, 0, 0, 0.05);
-          }
-          50% {
-            box-shadow:
-              0 0 20px rgba(124, 58, 237, 0.4),
-              0 0 40px rgba(139, 92, 246, 0.2);
-          }
-        }
-
-        @keyframes float-up {
-          0% {
-            transform: translateY(0) scale(1);
-          }
-          100% {
-            transform: translateY(-12px) scale(1.05);
-          }
-        }
-
-        .category-card {
+        .category-card, .view-all-card {
           position: relative;
           transition: all 0.2s ease;
         }
 
-        .category-card:hover {
-          border-color: rgba(100, 100, 140, 0.8) !important;
-        }
-
-        /* View All Card Hover Effect */
-        .view-all-card {
-          position: relative;
-          transition: all 0.2s ease;
-        }
-
-        .view-all-card:hover {
-          border-color: rgba(100, 100, 140, 0.8) !important;
-        }
-
-        /* Mobile Responsive Styles */
+        /* MOBILE VIEW - DO NOT CHANGE */
         @media (max-width: 640px) {
-          .heading-hello {
-            font-size: 32px !important;
-            -webkit-text-stroke: 1px #111827 !important;
-            margin-bottom: 0px !important;
-          }
-
-          .heading-new-way {
-            font-size: 32px !important;
-            -webkit-text-stroke: 1px #111827 !important;
-          }
-
-          .heading-learning {
-            font-size: 30px !important;
-            line-height: 1.2 !important;
-            position: relative !important;
-            padding: 0px !important;
-          }
-
-          .swash-underline {
-            font-size: 70px !important;
-            position: absolute !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            bottom: -40px !important;
-          }
-
-          .heading-container {
-            min-height: 160px !important;
-            gap: 0px !important;
-          }
-
-          .second-line-container {
-            min-height: auto !important;
-            margin-top: 0px !important;
-            margin-bottom: 0px !important;
-            padding-bottom: 0px !important;
-            gap: 4px !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            position: relative !important;
-          }
-
-          .learning-wrapper {
-            position: relative !important;
-            display: inline-block !important;
-            padding-bottom: 35px !important;
-            margin-top: -5px !important;
-          }
+          .heading-hello { font-size: 32px !important; -webkit-text-stroke: 1px #111827 !important; margin-bottom: 0px !important; }
+          .heading-new-way { font-size: 32px !important; -webkit-text-stroke: 1px #111827 !important; }
+          .heading-learning { font-size: 30px !important; line-height: 1.2 !important; position: relative !important; padding: 0px !important; }
+          .swash-underline { font-size: 70px !important; position: absolute !important; left: 50% !important; transform: translateX(-50%) !important; bottom: -40px !important; }
+          .heading-container { min-height: 160px !important; gap: 0px !important; }
+          .second-line-container { min-height: auto !important; margin-top: 0px !important; margin-bottom: 0px !important; padding-bottom: 0px !important; gap: 4px !important; flex-direction: column !important; align-items: center !important; position: relative !important; }
+          .learning-wrapper { position: relative !important; display: inline-block !important; padding-bottom: 35px !important; margin-top: -5px !important; }
         }
 
-        @media (min-width: 641px) and (max-width: 768px) {
-          .heading-hello {
-            font-size: 40px !important;
-            -webkit-text-stroke: 1.2px #111827 !important;
-            margin-bottom: -5px !important;
-          }
-
-          .heading-new-way {
-            font-size: 40px !important;
-            -webkit-text-stroke: 1.2px #111827 !important;
-          }
-
-          .heading-learning {
-            font-size: 38px !important;
-            line-height: 1.4 !important;
-            position: relative !important;
-            padding: 5px 0 !important;
-          }
-
-          .swash-underline {
-            font-size: 90px !important;
-            position: absolute !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            bottom: -40px !important;
-          }
-
-          .heading-container {
-            min-height: 200px !important;
-          }
-
-          .second-line-container {
-            min-height: auto !important;
-            margin-top: 0px !important;
-            margin-bottom: 0px !important;
-            gap: 6px !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            position: relative !important;
-          }
-
-          .learning-wrapper {
-            position: relative !important;
-            display: inline-block !important;
-            padding-bottom: 45px !important;
-          }
-        }
-
-        /* Tablet Landscape View (iPad 1024x768) - All 6 cards in single row */
-        @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+        /* ALL TABLET VIEWS (LANDSCAPE & 1072x846) */
+        @media (min-width: 768px) and (max-width: 1080px) {
+          /* Force all 6 cards into one row */
           .categories-grid {
             grid-template-columns: repeat(6, 1fr) !important;
-            gap: 1.5rem !important;
+            gap: 0.5rem !important;
+            max-width: 100% !important;
           }
 
-          .category-card,
-          .view-all-card {
-            padding: 0.5rem 0.75rem !important;
+          /* Reduce card size to fit row */
+          .category-card, .view-all-card {
+            padding: 0.6rem 0.4rem !important;
           }
 
-          .category-icon {
-            margin-bottom: 0.25rem !important;
-          }
-
-          .category-icon svg {
-            width: 20px !important;
-            height: 20px !important;
+          .category-icon :global(svg), .category-icon svg {
+            width: 22px !important;
+            height: 22px !important;
           }
 
           .category-title {
             font-size: 0.65rem !important;
-            margin-bottom: 0.125rem !important;
+            margin-bottom: 1px !important;
+            white-space: nowrap;
           }
 
           .category-count {
-            font-size: 0.6rem !important;
+            font-size: 0.55rem !important;
           }
 
           .view-all-icon-container {
-            width: 1.25rem !important;
-            height: 1.25rem !important;
-            margin-bottom: 0.25rem !important;
+            width: 1.4rem !important;
+            height: 1.4rem !important;
+            margin-bottom: 2px !important;
           }
 
-          .view-all-icon-container svg {
-            width: 12px !important;
-            height: 12px !important;
-          }
-
-          /* Floating GIF positioning for tablet landscape */
+          /* Floating Elements: Reposition to prevent content override */
           .floating-gif-left {
-            top: -5px !important;
-            left: -20px !important;
-          }
-
-          .floating-gif-left > div > div {
-            width: 180px !important;
-            height: 180px !important;
-          }
-
-          .floating-gif-left img {
-            width: 180px !important;
-            height: 180px !important;
+            top: -2px ;
+            left: -10px ;
+            display: block !important;
+            z-index: 0 !important;
           }
 
           .floating-gif-right {
-            bottom: 125px !important;
-            right: -5px !important;
+           
+            bottom: 100px !important;
+            right: -100px !important;
+            display: block !important;
+            z-index: 0 !important;
           }
 
-          .floating-gif-right > div > div {
-            width: 180px !important;
-            height: 180px !important;
+          .floating-gif-left img, .floating-gif-right img {
+            width: 170px !important;
+            height: 170px !important;
           }
+        }
 
-          .floating-gif-right img {
-            width: 180px !important;
-            height: 180px !important;
+        /* DESKTOP VIEW - DO NOT CHANGE */
+        @media (min-width: 1081px) {
+          .categories-grid {
+            grid-template-columns: repeat(6, 1fr) !important;
           }
         }
       `}</style>
 
-      {/* Floating GIF - Top Left (Business Purple) */}
+       {/* Floating GIF - Top Left (Business Purple) */}
       <div
         className="floating-gif-left absolute top-12 left-8 hidden lg:block"
         style={{ zIndex: 1 }}
@@ -714,6 +501,7 @@ export default function HeroSection() {
 
       {/* Bottom Accent Line */}
       <div className="w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+    
     </div>
   );
 }
