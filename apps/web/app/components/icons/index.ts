@@ -1,0 +1,45 @@
+/**
+ * Icons Index - Central export point for all icons
+ */
+
+export { Icon } from './Icon';
+export type { IconProps } from './Icon';
+
+export {
+  Icons,
+  // Education
+  BookIcon,
+  GraduationCapIcon,
+  CertificateIcon,
+  // Mathematics
+  CalculatorIcon,
+  MathIcon,
+  MathDuotoneIcon,
+  // Science
+  ScienceIcon,
+  ScienceDuotoneIcon,
+  AtomIcon,
+  // Programming
+  CodeIcon,
+  CodeDuotoneIcon,
+  TerminalIcon,
+  // Language
+  LanguageIcon,
+  LanguageDuotoneIcon,
+  // Business
+  BriefcaseIcon,
+  BriefcaseDuotoneIcon,
+  // UI
+  SearchIcon,
+  SearchDuotoneIcon,
+  ArrowRightIcon,
+  HomeIcon,
+  UserIcon,
+  BellIcon,
+  SettingsIcon,
+  // Financial
+  WalletIcon,
+  CreditCardIcon,
+  PiggyBankIcon,
+  ChartIcon,
+} from './IconRegistry';
