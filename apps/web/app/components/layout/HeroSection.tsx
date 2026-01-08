@@ -132,8 +132,14 @@ export default function HeroSection() {
         }
 
         @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         .animate-fadeInUp {
@@ -141,30 +147,73 @@ export default function HeroSection() {
         }
 
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
         }
 
-        .float-animation { animation: float 10s ease-in-out infinite; }
+        .float-animation {
+          animation: float 10s ease-in-out infinite;
+        }
         .float-animation-delayed {
           animation: float 6s ease-in-out infinite;
           animation-delay: 2s;
         }
 
-        .category-card, .view-all-card {
+        .category-card,
+        .view-all-card {
           position: relative;
           transition: all 0.2s ease;
         }
 
         /* MOBILE VIEW - DO NOT CHANGE */
         @media (max-width: 640px) {
-          .heading-hello { font-size: 32px !important; -webkit-text-stroke: 1px #111827 !important; margin-bottom: 0px !important; }
-          .heading-new-way { font-size: 32px !important; -webkit-text-stroke: 1px #111827 !important; }
-          .heading-learning { font-size: 30px !important; line-height: 1.2 !important; position: relative !important; padding: 0px !important; }
-          .swash-underline { font-size: 70px !important; position: absolute !important; left: 50% !important; transform: translateX(-50%) !important; bottom: -40px !important; }
-          .heading-container { min-height: 160px !important; gap: 0px !important; }
-          .second-line-container { min-height: auto !important; margin-top: 0px !important; margin-bottom: 0px !important; padding-bottom: 0px !important; gap: 4px !important; flex-direction: column !important; align-items: center !important; position: relative !important; }
-          .learning-wrapper { position: relative !important; display: inline-block !important; padding-bottom: 35px !important; margin-top: -5px !important; }
+          .heading-hello {
+            font-size: 32px !important;
+            -webkit-text-stroke: 1px #111827 !important;
+            margin-bottom: 0px !important;
+          }
+          .heading-new-way {
+            font-size: 32px !important;
+            -webkit-text-stroke: 1px #111827 !important;
+          }
+          .heading-learning {
+            font-size: 30px !important;
+            line-height: 1.2 !important;
+            position: relative !important;
+            padding: 0px !important;
+          }
+          .swash-underline {
+            font-size: 70px !important;
+            position: absolute !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            bottom: -40px !important;
+          }
+          .heading-container {
+            min-height: 160px !important;
+            gap: 0px !important;
+          }
+          .second-line-container {
+            min-height: auto !important;
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            padding-bottom: 0px !important;
+            gap: 4px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            position: relative !important;
+          }
+          .learning-wrapper {
+            position: relative !important;
+            display: inline-block !important;
+            padding-bottom: 35px !important;
+            margin-top: -5px !important;
+          }
         }
 
         /* ALL TABLET VIEWS (LANDSCAPE & 1072x846) */
@@ -177,11 +226,13 @@ export default function HeroSection() {
           }
 
           /* Reduce card size to fit row */
-          .category-card, .view-all-card {
+          .category-card,
+          .view-all-card {
             padding: 0.6rem 0.4rem !important;
           }
 
-          .category-icon :global(svg), .category-icon svg {
+          .category-icon :global(svg),
+          .category-icon svg {
             width: 22px !important;
             height: 22px !important;
           }
@@ -204,21 +255,21 @@ export default function HeroSection() {
 
           /* Floating Elements: Reposition to prevent content override */
           .floating-gif-left {
-            top: -2px ;
-            left: -10px ;
+            top: -1px;
+            left: -1px;
             display: block !important;
             z-index: 0 !important;
           }
 
           .floating-gif-right {
-           
             bottom: 100px !important;
             right: -100px !important;
             display: block !important;
             z-index: 0 !important;
           }
 
-          .floating-gif-left img, .floating-gif-right img {
+          .floating-gif-left img,
+          .floating-gif-right img {
             width: 170px !important;
             height: 170px !important;
           }
@@ -232,7 +283,7 @@ export default function HeroSection() {
         }
       `}</style>
 
-       {/* Floating GIF - Top Left (Business Purple) */}
+      {/* Floating GIF - Top Left (Business Purple) */}
       <div
         className="floating-gif-left absolute top-12 left-8 hidden lg:block"
         style={{ zIndex: 1 }}
@@ -255,7 +306,6 @@ export default function HeroSection() {
                 height: "240px",
                 objectFit: "contain",
                 imageRendering: "auto",
-      
               }}
             />
           </div>
@@ -285,7 +335,6 @@ export default function HeroSection() {
                 height: "240px",
                 objectFit: "contain",
                 imageRendering: "auto",
-                
               }}
             />
           </div>
@@ -501,7 +550,6 @@ export default function HeroSection() {
 
       {/* Bottom Accent Line */}
       <div className="w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
-    
     </div>
   );
 }
