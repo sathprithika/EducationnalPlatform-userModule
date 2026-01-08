@@ -593,7 +593,7 @@ export default function HeroSection() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor =
-                      "rgba(118, 18, 250, 0.6)";
+                      "rgba(118, 18, 250, 0.4)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor =
@@ -623,7 +623,7 @@ export default function HeroSection() {
                     "0 2px 4px 0 rgba(124, 58, 237, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.05)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(118, 18, 250, 0.6)";
+                  e.currentTarget.style.borderColor = "rgba(118, 18, 250, 0.4)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor =
