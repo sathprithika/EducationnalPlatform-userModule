@@ -121,7 +121,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative bg-white" style={{ overflow: "visible" }}>
+    <div className="relative bg-white" style={{ overflow: "hidden" }}>
       <style jsx>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
@@ -216,19 +216,33 @@ export default function HeroSection() {
           }
         }
 
-        /* ALL TABLET VIEWS (LANDSCAPE & 1072x846) */
+        /* UPDATED TABLET VIEW FOR FULL WIDTH AND SEARCH BAR FIX */
         @media (min-width: 768px) and (max-width: 1080px) {
-          /* Force all 6 cards into one row */
+          .max-w-7xl,
+          .max-w-5xl,
+          .max-w-4xl {
+            max-width: 100% !important;
+            width: 100% !important;
+          }
+
+          /* Reduce Search Bar width to avoid floating element overlap */
+          .search-bar-container {
+            max-width: 650px !important;
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+          }
+
           .categories-grid {
             grid-template-columns: repeat(6, 1fr) !important;
             gap: 0.5rem !important;
-            max-width: 100% !important;
+            width: 100% !important;
+            padding: 0 10px !important;
           }
 
-          /* Reduce card size to fit row */
           .category-card,
           .view-all-card {
-            padding: 0.6rem 0.4rem !important;
+            padding: 0.6rem 0.2rem !important;
+            min-width: 0 !important;
           }
 
           .category-icon :global(svg),
@@ -238,13 +252,15 @@ export default function HeroSection() {
           }
 
           .category-title {
-            font-size: 0.65rem !important;
+            font-size: 0.6rem !important;
             margin-bottom: 1px !important;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
 
           .category-count {
-            font-size: 0.55rem !important;
+            font-size: 0.5rem !important;
           }
 
           .view-all-icon-container {
@@ -253,16 +269,15 @@ export default function HeroSection() {
             margin-bottom: 2px !important;
           }
 
-          /* Floating Elements: Reposition to prevent content override */
           .floating-gif-left {
-            top: -1px;
-            left: -1px;
+            top: 5px;
+            left: -5px !important;
             display: block !important;
             z-index: 0 !important;
           }
 
           .floating-gif-right {
-            bottom: 100px !important;
+            bottom: 40px !important;
             right: -100px !important;
             display: block !important;
             z-index: 0 !important;
@@ -270,8 +285,8 @@ export default function HeroSection() {
 
           .floating-gif-left img,
           .floating-gif-right img {
-            width: 170px !important;
-            height: 170px !important;
+            width: 140px !important;
+            height: 140px !important;
           }
         }
 
@@ -283,9 +298,9 @@ export default function HeroSection() {
         }
       `}</style>
 
-      {/* Floating GIF - Top Left (Business Purple) */}
+      {/* Floating GIF - Top Left */}
       <div
-        className="floating-gif-left absolute top-12 left-8 hidden lg:block"
+        className="floating-gif-left absolute top-4 left-5 hidden lg:block"
         style={{ zIndex: 1 }}
       >
         <div className="float-animation">
@@ -305,16 +320,15 @@ export default function HeroSection() {
                 width: "240px",
                 height: "240px",
                 objectFit: "contain",
-                imageRendering: "auto",
               }}
             />
           </div>
         </div>
       </div>
 
-      {/* Floating GIF - Bottom Right (Languages Pink) */}
+      {/* Floating GIF - Bottom Right */}
       <div
-        className="floating-gif-right absolute bottom-32 right-8 hidden lg:block"
+        className="floating-gif-right absolute bottom-32 right-10 hidden lg:block"
         style={{ zIndex: 1 }}
       >
         <div className="float-animation-delayed">
@@ -334,7 +348,6 @@ export default function HeroSection() {
                 width: "240px",
                 height: "240px",
                 objectFit: "contain",
-                imageRendering: "auto",
               }}
             />
           </div>
@@ -345,7 +358,6 @@ export default function HeroSection() {
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         style={{ overflow: "visible" }}
       >
-        {/* Main Content */}
         <div className="pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12">
           {/* Heading Section */}
           <div
@@ -414,7 +426,6 @@ export default function HeroSection() {
                   >
                     Learning
                   </span>
-                  {/* Hand-drawn swash underline using swashes font letters */}
                   <span
                     className={`${swashesFont.className} swash-underline`}
                     style={{
@@ -444,8 +455,8 @@ export default function HeroSection() {
               Learning that adapts to how you learn best.
             </p>
 
-            {/* Search Bar */}
-            <div className="max-w-2xl mx-auto mt-0 mb-12 sm:mb-16 md:mb-20 px-2">
+            {/* Search Bar - Added search-bar-container class */}
+            <div className="search-bar-container max-w-2xl mx-auto mt-0 mb-12 sm:mb-16 md:mb-20 px-2">
               <form onSubmit={handleSearch} className="relative group">
                 <div className="relative flex items-center">
                   <div className="absolute left-4 sm:left-5 flex items-center pointer-events-none">
@@ -486,8 +497,7 @@ export default function HeroSection() {
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.95)",
                     borderColor: "rgba(140, 140, 170, 0.4)",
-                    boxShadow:
-                      "0 2px 4px 0 rgba(124, 58, 237, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+                    boxShadow: "0 2px 4px 0 rgba(124, 58, 237, 0.06)",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor =
@@ -510,15 +520,13 @@ export default function HeroSection() {
                 </Link>
               ))}
 
-              {/* View All Card */}
               <Link
                 href="/all-categories"
                 className="view-all-card group flex flex-col items-center px-4 sm:px-6 py-3 sm:py-4 rounded-2xl border relative backdrop-blur-md cursor-pointer w-full transition-all duration-300"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.95)",
                   borderColor: "rgba(140, 140, 170, 0.4)",
-                  boxShadow:
-                    "0 2px 4px 0 rgba(124, 58, 237, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+                  boxShadow: "0 2px 4px 0 rgba(124, 58, 237, 0.06)",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "rgba(118, 18, 250, 0.4)";
@@ -548,7 +556,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom Accent Line */}
       <div className="w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
     </div>
   );
