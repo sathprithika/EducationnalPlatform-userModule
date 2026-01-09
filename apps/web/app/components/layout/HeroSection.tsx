@@ -493,19 +493,12 @@ export default function HeroSection() {
                 <Link
                   key={index}
                   href={category.link}
-                  className="category-card group flex flex-col items-center px-4 sm:px-6 py-3 sm:py-4 rounded-2xl border relative backdrop-blur-md cursor-pointer w-full transition-all duration-300"
+                  /* Use !hover:border-[#7612fa66] to override the inline style */
+                  className="category-card group flex flex-col items-center px-4 sm:px-6 py-3 sm:py-4 rounded-2xl border relative backdrop-blur-md cursor-pointer w-full transition-all duration-300 hover:!border-[#7612fa66]"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.95)",
                     borderColor: "rgba(140, 140, 170, 0.4)",
                     boxShadow: "0 2px 4px 0 rgba(124, 58, 237, 0.06)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor =
-                      "rgba(118, 18, 250, 0.4)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor =
-                      "rgba(140, 140, 170, 0.4)";
                   }}
                 >
                   <div className="category-icon mb-2">
@@ -522,18 +515,12 @@ export default function HeroSection() {
 
               <Link
                 href="/all-categories"
-                className="view-all-card group flex flex-col items-center px-4 sm:px-6 py-3 sm:py-4 rounded-2xl border relative backdrop-blur-md cursor-pointer w-full transition-all duration-300"
+                /* Use !hover:border-[#7612fa66] to override the inline style */
+                className="view-all-card group flex flex-col items-center px-4 sm:px-6 py-3 sm:py-4 rounded-2xl border relative backdrop-blur-md cursor-pointer w-full transition-all duration-300 hover:!border-[#7612fa66]"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.95)",
                   borderColor: "rgba(140, 140, 170, 0.4)",
                   boxShadow: "0 2px 4px 0 rgba(124, 58, 237, 0.06)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(118, 18, 250, 0.4)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "rgba(140, 140, 170, 0.4)";
                 }}
               >
                 <div className="flex flex-col items-center">
