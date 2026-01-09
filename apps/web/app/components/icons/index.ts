@@ -33,10 +33,12 @@ export {
   SearchIcon,
   SearchDuotoneIcon,
   ArrowRightIcon,
+  ArrowLeftIcon,
   HomeIcon,
   UserIcon,
   BellIcon,
   SettingsIcon,
+  VisibleIcon,
   // Financial
   WalletIcon,
   CreditCardIcon,
